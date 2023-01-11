@@ -1,0 +1,75 @@
+from news.models import *
+
+//1.
+u1 = User.objects.create_user(username = 'Anna')
+u2 = User.objects.create_user(username = 'Maria')
+
+//2.
+a1 = Author.objects.create(author_user=u1)
+a2 = Author.objects.create(author_user=u2)
+
+//3.
+Category.objects.create(cat_name='science')
+Category.objects.create(cat_name='society')
+Category.objects.create(cat_name='war')
+Category.objects.create(cat_name='finance')
+
+//4.
+p1 = Post.objects.create(author=a1, cat_type='AR', post_title = 'one title', post_text = 'one big text')
+
+p2 = Post.objects.create(author=a1, cat_type='AR', post_title = 'one esle title', post_text = 'one esle big text')
+
+p3 = Post.objects.create(author=a2, cat_type='NW', post_title = 'news title', post_text = 'news big text')
+
+//5.
+p1.category.add(Category.objects.get(id=1))
+p1.category.add(Category.objects.get(id=2))
+p2.category.add(Category.objects.get(id=1))
+p2.category.add(Category.objects.get(id=3))
+p3.category.add(Category.objects.get(id=3))
+p3.category.add(Category.objects.get(id=4))
+
+//6.
+Comment.objects.create(post=p1, user=a1.author_user, com_text='text1 by author')
+Comment.objects.create(post=p1, user=a2.author_user, com_text='text2 by author')
+Comment.objects.create(post=p2, user=a1.author_user, com_text='text3 by author')
+Comment.objects.create(post=p3, user=a1.author_user, com_text='text4 by author')
+
+//7.
+Comment.objects.get(id=1).like()
+Comment.objects.get(id=1).like()
+Comment.objects.get(id=2).like()
+Comment.objects.get(id=2).like()
+Comment.objects.get(id=3).like()
+Comment.objects.get(id=3).like()
+Comment.objects.get(id=4).like()
+Comment.objects.get(id=4).like()
+Comment.objects.get(id=1).dislike()
+p1.like()
+p1.like()
+p1.like()
+p2.like()
+p2.like()
+p3.like()
+
+//8.
+a1.update_rating()
+a2.update_rating()
+
+//9.
+a = Author.objects.order_by('-author_rate')[0]
+
+a.author_rate
+a.author_user.username
+
+//10.
+p = Post.objects.order_by('-post_rate')[0]
+
+p.author.author_user.username
+p.author.author_rate
+p.post_time
+p.post_title
+p.preview()
+
+//11.
+p.comment_set.all().values('com_time', 'user', 'com_text', 'com_rate')
