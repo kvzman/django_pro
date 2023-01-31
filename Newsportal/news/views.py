@@ -26,10 +26,7 @@ class PostCreate(CreateView):
     template_name = 'post_edit.html'
 
 
-class NewsCreate(CreateView):
-    form_class = NewsForm
-    model = Post
-    template_name = 'post_edit.html'
+class NewsCreate(PostCreate):
 
     def form_valid(self, form):
         post = form.save(commit=False)
@@ -43,10 +40,7 @@ class PostUpdate(UpdateView):
     template_name = 'post_edit.html'
 
 
-class NewsUpdate(UpdateView):
-    form_class = NewsForm
-    model = Post
-    template_name = 'post_edit.html'
+class NewsUpdate(PostUpdate):
 
     def form_valid(self, form):
         post = form.save(commit=False)
@@ -60,10 +54,7 @@ class PostDelete(DeleteView):
     success_url = reverse_lazy('post_list')
 
 
-class NewsDelete(DeleteView):
-    model = Post
-    template_name = 'post_delete.html'
-    success_url = reverse_lazy('post_list')
+class NewsDelete(PostDelete):
 
     def form_valid(self, form):
         post = form.save(commit=False)
