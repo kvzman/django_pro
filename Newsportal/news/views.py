@@ -1,7 +1,8 @@
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import PermissionRequiredMixin
 
-from .forms import PostForm, NewsForm
+from .forms import PostForm
 from .models import Post
 from .filters import PostFilter
 
@@ -20,7 +21,8 @@ class PostDetail(DetailView):
     context_object_name = 'one_post'
 
 
-class PostCreate(CreateView):
+class PostCreate(PermissionRequiredMixin, CreateView):
+    permission_required = ('news.add_one_post',)
     form_class = PostForm
     model = Post
     template_name = 'post_edit.html'
@@ -35,6 +37,7 @@ class NewsCreate(PostCreate):
 
 
 class PostUpdate(UpdateView):
+    permission_required = ('news.change_one_post',)
     form_class = PostForm
     model = Post
     template_name = 'post_edit.html'
@@ -49,6 +52,7 @@ class NewsUpdate(PostUpdate):
 
 
 class PostDelete(DeleteView):
+    permission_required = ('news.delete_one_post',)
     model = Post
     template_name = 'post_delete.html'
     success_url = reverse_lazy('post_list')

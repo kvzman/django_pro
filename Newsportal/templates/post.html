@@ -8,20 +8,34 @@ News
 {% block content %}
    <h1>Все новости</h1>
    <h2>Количество новостей сегодня: {{ posts|length }}</h2>
+
+   {% if perms.news.add_one_post %}
+   <a href="{% url 'news_create' %}">Добавить новость</a>
+   <a href="{% url 'post_create' %}">Добавить статью</a>
+   {% endif %}
+
    <hr>
    {% if posts %}
-       <table>
-           {% for post in posts %}
-           <tr>
-               <td>{{ post.post_title|censor|truncatechars:50 }}</td>
-               <td>{{ post.post_time|date:'d M Y' }}</td>
-               <td>{{ post.post_text|truncatechars:50|censor }}</td>
-           </tr>
-           {% endfor %}
+      <table>
+         {% for post in posts %}
+         <tr>
+            <td>{{ post.post_title|censor|truncatechars:50 }}</td>
+            <td>{{ post.post_time|date:'d M Y' }}</td>
+            <td>{{ post.post_text|truncatechars:50|censor }}</td>
+            <td>
+               {% if perms.news.change_one_post %}
+               <a href="{% url 'news_update' pk=post.id %}">Изменить</a>
+               {% endif %}
+               {% if perms.news.delete_one_post %}
+               <a href="{% url 'news_delete' post.id %}">Удалить</a>
+               {% endif %}
+            <td>
+         </tr>
+         {% endfor %}
 
-       </table>
+      </table>
    {% else %}
-       <h2>Новостей нет!</h2>
+      <h2>Новостей нет!</h2>
    {% endif %}
 
    {% if page_obj.has_previous %}

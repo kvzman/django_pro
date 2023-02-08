@@ -21,5 +21,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls, name='admin'),
     path('pages/', include('django.contrib.flatpages.urls')),
+    path("accounts/", include("allauth.urls")),
     path('', include('news.urls')),
 ]
