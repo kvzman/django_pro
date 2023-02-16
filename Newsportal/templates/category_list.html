@@ -7,7 +7,9 @@ News
 
 {% block content %}
    <h1>Все новости</h1>
-   <h2>Количество новостей сегодня: {{ posts|length }}</h2>
+   {% if is_not_subscriber %}
+      <p class="text-center"><a href="{% url 'subscribe' category.id %}"class="btn btn-secondary btn-sm">Подписаться</a></p>
+   {% endif %}
 
    {% if perms.news.add_one_post %}
    <a href="{% url 'news_create' %}">Добавить новость</a>
@@ -15,15 +17,15 @@ News
    {% endif %}
 
    <hr>
-   {% if posts %}
+   {% if category_news_list %}
       <table>
-         {% for post in posts %}
+         {% for post in category_news_list %}
          <tr>
-            <td>{{ post.post_title|censor|truncatechars:50 }}</td>
+            <td>{{ post.post_title|truncatechars:50 }}</td>
             <td>{{ post.post_time|date:'d M Y' }}</td>
-            <td>{{ post.post_text|truncatechars:50|censor }}</td>
+            <td>{{ post.post_text|truncatechars:50 }}</td>
             <td>{% for category in post.category.all %}
-               <a href="{% url 'category_list' category.id %}">{{ category }}</a>
+               <a href="{% url 'category_list' category.id %}"> {{ category }}</a>
                {% endfor %}
             </td>
             <td>
