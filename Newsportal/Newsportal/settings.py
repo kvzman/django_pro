@@ -169,3 +169,9 @@ SITE_URL = 'http://127.0.0.1:8000/'
 
 APSCHEDULER_DATETIME_FORMAT = 'N j, Y, f:s a'
 APSCHEDULER_RUN_NOW_TIMEOUT = 25
+
+CELERY_BROKER_URL = 'redis://default:byHf46RaEEQzrFXOzzB0HUcS5WgfR1Ul@redis-18400.c1.asia-northeast1-1.gce.cloud.redislabs.com:18400'
+CELERY_RESULT_BACKEND = 'redis://default:byHf46RaEEQzrFXOzzB0HUcS5WgfR1Ul@redis-18400.c1.asia-northeast1-1.gce.cloud.redislabs.com:18400'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
