@@ -8,6 +8,12 @@ from .filters import PostFilter
 
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404
+from django.core.cache import cache
+import logging
+
+
+logger = logging.getLogger(__name__)
+logger.info('INFO')
 
 
 class PostList(ListView):
@@ -22,6 +28,13 @@ class PostDetail(DetailView):
     model = Post
     template_name = 'one_post.html'
     context_object_name = 'one_post'
+
+    def get_object(self, *args, **kwargs):
+        obj = cache.get(f'post-{self.kwargs["pk"]}', None)
+        if not obj:
+            obj = super().get_object(queryset=self.queryset)
+            cache.set(f'post-{self.kwargs["pk"]}', obj)
+        return obj
 
 
 class PostCreate(PermissionRequiredMixin, CreateView):
