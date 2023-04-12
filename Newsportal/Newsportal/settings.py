@@ -182,7 +182,7 @@ CACHES = {
         'LOCATION': os.path.join(BASE_DIR, 'cache_files'),
     }
 }
-# разберись с фильтрами остаальное вроде ок
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -191,26 +191,18 @@ LOGGING = {
             'format': '{asctime} {levelname} {message}',
             'style': '{',
         },
-        'simpleWAR': {
-            'format': '{pathname}',
+        'simple_path': {
+            'format': '{asctime} {levelname} {message} {pathname}',
             'style': '{',
         },
-        'simpleERROR': {
-            'format': '{exc_info}',
+        'simple_path_exc': {
+            'format': '{asctime} {levelname} {message} {pathname} {exc_info}',
             'style': '{',
         },
         'generalFORM': {
             'format': '{asctime} {levelname} {module} {message}',
             'style': '{',
         },
-        'errorLogFORM': {
-            'format': '{asctime} {levelname} {message} {pathname} {exc_info}',
-            'style': '{',
-        },
-        'emailFORM': {
-            'format': '{asctime} {levelname} {message} {pathname}',
-            'style': '{',
-        }
     },
     'filters': {
         'require_debug_true': {
@@ -231,13 +223,13 @@ LOGGING = {
             'level': 'WARNING',
             'filters': ['require_debug_true'],
             'class': 'logging.StreamHandler',
-            'formatter': 'simpleWAR',
+            'formatter': 'simple_path',
         },
         'consoleERROR': {
             'level': 'ERROR',
             'filters': ['require_debug_true'],
             'class': 'logging.StreamHandler',
-            'formatter': 'simpleERROR',
+            'formatter': 'simple_path_exc',
         },
         'general': {
             'level': 'INFO',
@@ -250,7 +242,7 @@ LOGGING = {
             'level': 'ERROR',
             'class': 'logging.FileHandler',
             'filename': 'errors.log',
-            'formatter': 'errorLogFORM',
+            'formatter': 'simple_path_exc',
         },
         'security': {
             'level': 'INFO',
@@ -262,27 +254,19 @@ LOGGING = {
             'level': 'ERROR',
             'filters': ['require_debug_false'],
             'class': 'django.utils.log.AdminEmailHandler',
-            'formatter': 'emailFORM',
+            'formatter': 'simple_path',
         },
     },
     'loggers': {
         'django': {
-            'handlers': ['console', 'consoleWARNING', 'consoleERROR', 'general'],
-        },
-        'django.request': {
-            'handlers': ['errors', 'mail_admins'],
-        },
-        'django.server': {
-            'handlers': ['errors', 'mail_admins'],
-        },
-        'django.template': {
-            'handlers': ['errors'],
-        },
-        'django.db.backends': {
-            'handlers': ['errors'],
+            'handlers': ['console', 'consoleWARNING', 'consoleERROR', 'general', 'errors', 'mail_admins'],
+            'level': 'DEBUG',
+            'propagate': True,
         },
         'django.security': {
             'handlers': ['security'],
+            'level': 'INFO',
+            'propagate': False,
         },
     },
 }
