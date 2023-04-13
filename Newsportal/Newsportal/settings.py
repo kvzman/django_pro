@@ -259,13 +259,33 @@ LOGGING = {
     },
     'loggers': {
         'django': {
-            'handlers': ['console', 'consoleWARNING', 'consoleERROR', 'general', 'errors', 'mail_admins'],
+            'handlers': ['console', 'consoleWARNING', 'consoleERROR', 'general'],
             'level': 'DEBUG',
             'propagate': True,
         },
         'django.security': {
             'handlers': ['security'],
             'level': 'INFO',
+            'propagate': False,
+        },
+        'django.server': {
+            'handlers': ['errors', 'mail_admins'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+        'django.request': {
+            'handlers': ['errors', 'mail_admins'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+        'django.template': {
+            'handlers': ['errors'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+        'django.db_backends': {
+            'handlers': ['errors'],
+            'level': 'ERROR',
             'propagate': False,
         },
     },
