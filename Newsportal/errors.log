@@ -1,0 +1,438 @@
+2023-04-13 21:20:23,843 DEBUG Exception while resolving variable 'name' in template 'unknown'. C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py (<class 'django.template.base.VariableDoesNotExist'>, VariableDoesNotExist('Failed lookup for key [%s] in %r', ('name', <URLResolver <URLPattern list> (admin:admin) 'admin/'>)), <traceback object at 0x0000021FB1D84500>)
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\core\handlers\base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\urls\resolvers.py", line 702, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'django.contrib.flatpages.urls' from 'C:\\kvzdev\\django_pro\\venv\\lib\\site-packages\\django\\contrib\\flatpages\\urls.py'> (None:None) 'pages/'>], [<URLResolver <module 'allauth.urls' from 'C:\\kvzdev\\django_pro\\venv\\lib\\site-packages\\allauth\\urls.py'> (None:None) 'accounts/'>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'news/' [name='post_list']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'news/<int:pk>' [name='post_detail']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'news/search/' [name='post_search']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'news/create/' [name='news_create']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'news/<int:pk>/edit/' [name='news_update']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'news<int:pk>/delete/' [name='news_delete']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'articles/create/' [name='post_create']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'articles/<int:pk>/edit/' [name='post_update']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'articles<int:pk>/delete/' [name='post_delete']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'categories/<int:pk>' [name='category_list']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'categories/<int:pk>/subscribe' [name='subscribe']>]], 'path': ''}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 890, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <URLPattern list> (admin:admin) 'admin/'>
+2023-04-13 21:20:23,903 DEBUG Exception while resolving variable 'name' in template 'unknown'. C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py (<class 'django.template.base.VariableDoesNotExist'>, VariableDoesNotExist('Failed lookup for key [%s] in %r', ('name', <URLResolver <module 'django.contrib.flatpages.urls' from 'C:\\kvzdev\\django_pro\\venv\\lib\\site-packages\\django\\contrib\\flatpages\\urls.py'> (None:None) 'pages/'>)), <traceback object at 0x0000021FB1D844C0>)
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\core\handlers\base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\urls\resolvers.py", line 702, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'django.contrib.flatpages.urls' from 'C:\\kvzdev\\django_pro\\venv\\lib\\site-packages\\django\\contrib\\flatpages\\urls.py'> (None:None) 'pages/'>], [<URLResolver <module 'allauth.urls' from 'C:\\kvzdev\\django_pro\\venv\\lib\\site-packages\\allauth\\urls.py'> (None:None) 'accounts/'>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'news/' [name='post_list']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'news/<int:pk>' [name='post_detail']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'news/search/' [name='post_search']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'news/create/' [name='news_create']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'news/<int:pk>/edit/' [name='news_update']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'news<int:pk>/delete/' [name='news_delete']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'articles/create/' [name='post_create']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'articles/<int:pk>/edit/' [name='post_update']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'articles<int:pk>/delete/' [name='post_delete']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'categories/<int:pk>' [name='category_list']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'categories/<int:pk>/subscribe' [name='subscribe']>]], 'path': ''}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 890, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'django.contrib.flatpages.urls' from 'C:\\kvzdev\\django_pro\\venv\\lib\\site-packages\\django\\contrib\\flatpages\\urls.py'> (None:None) 'pages/'>
+2023-04-13 21:20:23,907 DEBUG Exception while resolving variable 'name' in template 'unknown'. C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py (<class 'django.template.base.VariableDoesNotExist'>, VariableDoesNotExist('Failed lookup for key [%s] in %r', ('name', <URLResolver <module 'allauth.urls' from 'C:\\kvzdev\\django_pro\\venv\\lib\\site-packages\\allauth\\urls.py'> (None:None) 'accounts/'>)), <traceback object at 0x0000021FB1D84940>)
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\core\handlers\base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\urls\resolvers.py", line 702, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'django.contrib.flatpages.urls' from 'C:\\kvzdev\\django_pro\\venv\\lib\\site-packages\\django\\contrib\\flatpages\\urls.py'> (None:None) 'pages/'>], [<URLResolver <module 'allauth.urls' from 'C:\\kvzdev\\django_pro\\venv\\lib\\site-packages\\allauth\\urls.py'> (None:None) 'accounts/'>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'news/' [name='post_list']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'news/<int:pk>' [name='post_detail']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'news/search/' [name='post_search']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'news/create/' [name='news_create']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'news/<int:pk>/edit/' [name='news_update']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'news<int:pk>/delete/' [name='news_delete']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'articles/create/' [name='post_create']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'articles/<int:pk>/edit/' [name='post_update']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'articles<int:pk>/delete/' [name='post_delete']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'categories/<int:pk>' [name='category_list']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'categories/<int:pk>/subscribe' [name='subscribe']>]], 'path': ''}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 890, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'allauth.urls' from 'C:\\kvzdev\\django_pro\\venv\\lib\\site-packages\\allauth\\urls.py'> (None:None) 'accounts/'>
+2023-04-13 21:20:23,930 WARNING Not Found: / C:\kvzdev\django_pro\venv\lib\site-packages\django\utils\log.py None
+2023-04-13 21:20:23,931 WARNING "GET / HTTP/1.1" 404 4347 C:\kvzdev\django_pro\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-04-13 21:20:24,098 DEBUG Exception while resolving variable 'name' in template 'unknown'. C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py (<class 'django.template.base.VariableDoesNotExist'>, VariableDoesNotExist('Failed lookup for key [%s] in %r', ('name', <URLResolver <URLPattern list> (admin:admin) 'admin/'>)), <traceback object at 0x0000021FB1E41A80>)
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\core\handlers\base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\urls\resolvers.py", line 702, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'django.contrib.flatpages.urls' from 'C:\\kvzdev\\django_pro\\venv\\lib\\site-packages\\django\\contrib\\flatpages\\urls.py'> (None:None) 'pages/'>], [<URLResolver <module 'allauth.urls' from 'C:\\kvzdev\\django_pro\\venv\\lib\\site-packages\\allauth\\urls.py'> (None:None) 'accounts/'>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'news/' [name='post_list']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'news/<int:pk>' [name='post_detail']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'news/search/' [name='post_search']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'news/create/' [name='news_create']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'news/<int:pk>/edit/' [name='news_update']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'news<int:pk>/delete/' [name='news_delete']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'articles/create/' [name='post_create']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'articles/<int:pk>/edit/' [name='post_update']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'articles<int:pk>/delete/' [name='post_delete']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'categories/<int:pk>' [name='category_list']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'categories/<int:pk>/subscribe' [name='subscribe']>]], 'path': 'favicon.ico'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 890, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <URLPattern list> (admin:admin) 'admin/'>
+2023-04-13 21:20:24,099 DEBUG Exception while resolving variable 'name' in template 'unknown'. C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py (<class 'django.template.base.VariableDoesNotExist'>, VariableDoesNotExist('Failed lookup for key [%s] in %r', ('name', <URLResolver <module 'django.contrib.flatpages.urls' from 'C:\\kvzdev\\django_pro\\venv\\lib\\site-packages\\django\\contrib\\flatpages\\urls.py'> (None:None) 'pages/'>)), <traceback object at 0x0000021FB1E41A40>)
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\core\handlers\base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\urls\resolvers.py", line 702, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'django.contrib.flatpages.urls' from 'C:\\kvzdev\\django_pro\\venv\\lib\\site-packages\\django\\contrib\\flatpages\\urls.py'> (None:None) 'pages/'>], [<URLResolver <module 'allauth.urls' from 'C:\\kvzdev\\django_pro\\venv\\lib\\site-packages\\allauth\\urls.py'> (None:None) 'accounts/'>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'news/' [name='post_list']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'news/<int:pk>' [name='post_detail']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'news/search/' [name='post_search']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'news/create/' [name='news_create']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'news/<int:pk>/edit/' [name='news_update']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'news<int:pk>/delete/' [name='news_delete']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'articles/create/' [name='post_create']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'articles/<int:pk>/edit/' [name='post_update']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'articles<int:pk>/delete/' [name='post_delete']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'categories/<int:pk>' [name='category_list']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'categories/<int:pk>/subscribe' [name='subscribe']>]], 'path': 'favicon.ico'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 890, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'django.contrib.flatpages.urls' from 'C:\\kvzdev\\django_pro\\venv\\lib\\site-packages\\django\\contrib\\flatpages\\urls.py'> (None:None) 'pages/'>
+2023-04-13 21:20:24,100 DEBUG Exception while resolving variable 'name' in template 'unknown'. C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py (<class 'django.template.base.VariableDoesNotExist'>, VariableDoesNotExist('Failed lookup for key [%s] in %r', ('name', <URLResolver <module 'allauth.urls' from 'C:\\kvzdev\\django_pro\\venv\\lib\\site-packages\\allauth\\urls.py'> (None:None) 'accounts/'>)), <traceback object at 0x0000021FB1E41F40>)
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\core\handlers\base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\urls\resolvers.py", line 702, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'django.contrib.flatpages.urls' from 'C:\\kvzdev\\django_pro\\venv\\lib\\site-packages\\django\\contrib\\flatpages\\urls.py'> (None:None) 'pages/'>], [<URLResolver <module 'allauth.urls' from 'C:\\kvzdev\\django_pro\\venv\\lib\\site-packages\\allauth\\urls.py'> (None:None) 'accounts/'>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'news/' [name='post_list']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'news/<int:pk>' [name='post_detail']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'news/search/' [name='post_search']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'news/create/' [name='news_create']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'news/<int:pk>/edit/' [name='news_update']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'news<int:pk>/delete/' [name='news_delete']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'articles/create/' [name='post_create']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'articles/<int:pk>/edit/' [name='post_update']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'articles<int:pk>/delete/' [name='post_delete']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'categories/<int:pk>' [name='category_list']>], [<URLResolver <module 'news.urls' from 'C:\\kvzdev\\django_pro\\newsportal\\news\\urls.py'> (None:None) ''>, <URLPattern 'categories/<int:pk>/subscribe' [name='subscribe']>]], 'path': 'favicon.ico'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 890, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'allauth.urls' from 'C:\\kvzdev\\django_pro\\venv\\lib\\site-packages\\allauth\\urls.py'> (None:None) 'accounts/'>
+2023-04-13 21:20:24,105 WARNING Not Found: /favicon.ico C:\kvzdev\django_pro\venv\lib\site-packages\django\utils\log.py None
+2023-04-13 21:20:24,105 WARNING "GET /favicon.ico HTTP/1.1" 404 4398 C:\kvzdev\django_pro\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-04-13 21:20:30,617 INFO "GET /news/ HTTP/1.1" 200 8038 C:\kvzdev\django_pro\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-04-13 21:20:35,639 INFO "GET /news/search/ HTTP/1.1" 200 7407 C:\kvzdev\django_pro\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-04-13 21:20:40,167 INFO "GET /news/search/?post_title__icontains=&added_after= HTTP/1.1" 200 7504 C:\kvzdev\django_pro\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-04-13 21:20:41,517 INFO "GET /news/search/?post_title__icontains=&added_after= HTTP/1.1" 200 7504 C:\kvzdev\django_pro\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-04-13 21:20:44,117 INFO "GET /news/search/?post_title__icontains=AD&added_after= HTTP/1.1" 200 4298 C:\kvzdev\django_pro\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-04-13 21:20:51,278 INFO "GET /news/ HTTP/1.1" 200 8038 C:\kvzdev\django_pro\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-04-13 21:20:54,094 DEBUG Exception while resolving variable 'has_previous' in template 'category_list.html'. C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py (<class 'django.template.base.VariableDoesNotExist'>, VariableDoesNotExist('Failed lookup for key [%s] in %r', ('has_previous', None)), <traceback object at 0x0000021FB1C88900>)
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 890, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'has_previous'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'has_previous'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [has_previous] in None
+2023-04-13 21:20:54,097 DEBUG Exception while resolving variable 'number' in template 'category_list.html'. C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py (<class 'django.template.base.VariableDoesNotExist'>, VariableDoesNotExist('Failed lookup for key [%s] in %r', ('number', None)), <traceback object at 0x0000021FB1C48A00>)
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 890, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'number'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'number'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [number] in None
+2023-04-13 21:20:54,099 DEBUG Exception while resolving variable 'has_next' in template 'category_list.html'. C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py (<class 'django.template.base.VariableDoesNotExist'>, VariableDoesNotExist('Failed lookup for key [%s] in %r', ('has_next', None)), <traceback object at 0x0000021FB1F30680>)
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 890, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'NoneType' object has no attribute 'has_next'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'has_next'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [has_next] in None
+2023-04-13 21:20:54,103 INFO "GET /categories/3 HTTP/1.1" 200 12476 C:\kvzdev\django_pro\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-04-13 21:20:56,205 INFO "GET /categories/3/subscribe HTTP/1.1" 302 0 C:\kvzdev\django_pro\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-04-13 21:20:56,268 DEBUG Exception while resolving variable 'scope' in template 'account/login.html'. C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py (<class 'django.template.base.VariableDoesNotExist'>, VariableDoesNotExist('Failed lookup for key [%s] in %r', ('scope', [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x0000021FB1F55940>>, 'request': <WSGIRequest: GET '/accounts/login/?next=/categories/3/subscribe'>, 'user': <SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x0000021FB1E720D0>>, 'perms': PermWrapper(<SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x0000021FB1E720D0>>), 'messages': <FallbackStorage: request=<WSGIRequest: GET '/accounts/login/?next=/categories/3/subscribe'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'form': <LoginForm bound=False, valid=Unknown, fields=(login;password;remember)>, 'view': <allauth.account.views.LoginView object at 0x0000021FB1E4D310>, 'signup_url': '/accounts/signup/?next=%2Fcategories%2F3%2Fsubscribe', 'site': <Site: example.com>, 'redirect_field_name': 'next', 'redirect_field_value': '/categories/3/subscribe'}, {'block': <Block Node: body. Contents: [<TextNode: '\n\n    '>, <IfNode>, <TextNode: '\n\n    <div>\n      <strong'>, <IfNode>, <TextNode: '\n      </ul>\n    </div>\n '>, <Block Node: content. Contents: [<TextNode: '\n    '>]>, <TextNode: '\n    '>]>}, {'block': <Block Node: content. Contents: [<TextNode: '\n\n<h1>'>, <django.templatetags.i18n.TranslateNode object at 0x0000021FB1E816A0>, <TextNode: '</h1>\n\n'>, <django.template.library.SimpleNode object at 0x0000021FB1E81760>, <TextNode: '\n\n'>, <IfNode>, <TextNode: '\n\n<form class="login" met'>, <URLNode view_name=''account_login'' args=[] kwargs={} as=None>, <TextNode: '">\n  '>, <django.template.defaulttags.CsrfTokenNode object at 0x0000021FB1E58460>, <TextNode: '\n  '>, <Variable Node: form.as_p>, <TextNode: '\n  '>, <IfNode>, <TextNode: '\n  <a class="button secon'>, <URLNode view_name=''account_reset_password'' args=[] kwargs={} as=None>, <TextNode: '">'>, <django.templatetags.i18n.TranslateNode object at 0x0000021FB1E81FD0>, <TextNode: '</a>\n  <button class="pri'>, <django.templatetags.i18n.TranslateNode object at 0x0000021FB1E840A0>, <TextNode: '</button>\n</form>\n\n'>]>, 'socialaccount_providers': [<allauth.socialaccount.providers.yandex.provider.YandexProvider object at 0x0000021FB1EAE070>]}, {'process': 'login', 'socialaccount_providers': [<allauth.socialaccount.providers.yandex.provider.YandexProvider object at 0x0000021FB1E88FA0>]}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 1, 'revcounter0': 0, 'first': True, 'last': True}, 'provider': <allauth.socialaccount.providers.yandex.provider.YandexProvider object at 0x0000021FB1E88FA0>}])), <traceback object at 0x0000021FB1EA4CC0>)
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'scope'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'RequestContext' has no attribute 'scope'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'scope'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [scope] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x0000021FB1F55940>>, 'request': <WSGIRequest: GET '/accounts/login/?next=/categories/3/subscribe'>, 'user': <SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x0000021FB1E720D0>>, 'perms': PermWrapper(<SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x0000021FB1E720D0>>), 'messages': <FallbackStorage: request=<WSGIRequest: GET '/accounts/login/?next=/categories/3/subscribe'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'form': <LoginForm bound=False, valid=Unknown, fields=(login;password;remember)>, 'view': <allauth.account.views.LoginView object at 0x0000021FB1E4D310>, 'signup_url': '/accounts/signup/?next=%2Fcategories%2F3%2Fsubscribe', 'site': <Site: example.com>, 'redirect_field_name': 'next', 'redirect_field_value': '/categories/3/subscribe'}, {'block': <Block Node: body. Contents: [<TextNode: '\n\n    '>, <IfNode>, <TextNode: '\n\n    <div>\n      <strong'>, <IfNode>, <TextNode: '\n      </ul>\n    </div>\n '>, <Block Node: content. Contents: [<TextNode: '\n    '>]>, <TextNode: '\n    '>]>}, {'block': <Block Node: content. Contents: [<TextNode: '\n\n<h1>'>, <django.templatetags.i18n.TranslateNode object at 0x0000021FB1E816A0>, <TextNode: '</h1>\n\n'>, <django.template.library.SimpleNode object at 0x0000021FB1E81760>, <TextNode: '\n\n'>, <IfNode>, <TextNode: '\n\n<form class="login" met'>, <URLNode view_name=''account_login'' args=[] kwargs={} as=None>, <TextNode: '">\n  '>, <django.template.defaulttags.CsrfTokenNode object at 0x0000021FB1E58460>, <TextNode: '\n  '>, <Variable Node: form.as_p>, <TextNode: '\n  '>, <IfNode>, <TextNode: '\n  <a class="button secon'>, <URLNode view_name=''account_reset_password'' args=[] kwargs={} as=None>, <TextNode: '">'>, <django.templatetags.i18n.TranslateNode object at 0x0000021FB1E81FD0>, <TextNode: '</a>\n  <button class="pri'>, <django.templatetags.i18n.TranslateNode object at 0x0000021FB1E840A0>, <TextNode: '</button>\n</form>\n\n'>]>, 'socialaccount_providers': [<allauth.socialaccount.providers.yandex.provider.YandexProvider object at 0x0000021FB1EAE070>]}, {'process': 'login', 'socialaccount_providers': [<allauth.socialaccount.providers.yandex.provider.YandexProvider object at 0x0000021FB1E88FA0>]}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 1, 'revcounter0': 0, 'first': True, 'last': True}, 'provider': <allauth.socialaccount.providers.yandex.provider.YandexProvider object at 0x0000021FB1E88FA0>}]
+2023-04-13 21:20:56,285 DEBUG Exception while resolving variable 'auth_params' in template 'account/login.html'. C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py (<class 'django.template.base.VariableDoesNotExist'>, VariableDoesNotExist('Failed lookup for key [%s] in %r', ('auth_params', [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x0000021FB1F55940>>, 'request': <WSGIRequest: GET '/accounts/login/?next=/categories/3/subscribe'>, 'user': <SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x0000021FB1E720D0>>, 'perms': PermWrapper(<SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x0000021FB1E720D0>>), 'messages': <FallbackStorage: request=<WSGIRequest: GET '/accounts/login/?next=/categories/3/subscribe'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'form': <LoginForm bound=False, valid=Unknown, fields=(login;password;remember)>, 'view': <allauth.account.views.LoginView object at 0x0000021FB1E4D310>, 'signup_url': '/accounts/signup/?next=%2Fcategories%2F3%2Fsubscribe', 'site': <Site: example.com>, 'redirect_field_name': 'next', 'redirect_field_value': '/categories/3/subscribe'}, {'block': <Block Node: body. Contents: [<TextNode: '\n\n    '>, <IfNode>, <TextNode: '\n\n    <div>\n      <strong'>, <IfNode>, <TextNode: '\n      </ul>\n    </div>\n '>, <Block Node: content. Contents: [<TextNode: '\n    '>]>, <TextNode: '\n    '>]>}, {'block': <Block Node: content. Contents: [<TextNode: '\n\n<h1>'>, <django.templatetags.i18n.TranslateNode object at 0x0000021FB1E816A0>, <TextNode: '</h1>\n\n'>, <django.template.library.SimpleNode object at 0x0000021FB1E81760>, <TextNode: '\n\n'>, <IfNode>, <TextNode: '\n\n<form class="login" met'>, <URLNode view_name=''account_login'' args=[] kwargs={} as=None>, <TextNode: '">\n  '>, <django.template.defaulttags.CsrfTokenNode object at 0x0000021FB1E58460>, <TextNode: '\n  '>, <Variable Node: form.as_p>, <TextNode: '\n  '>, <IfNode>, <TextNode: '\n  <a class="button secon'>, <URLNode view_name=''account_reset_password'' args=[] kwargs={} as=None>, <TextNode: '">'>, <django.templatetags.i18n.TranslateNode object at 0x0000021FB1E81FD0>, <TextNode: '</a>\n  <button class="pri'>, <django.templatetags.i18n.TranslateNode object at 0x0000021FB1E840A0>, <TextNode: '</button>\n</form>\n\n'>]>, 'socialaccount_providers': [<allauth.socialaccount.providers.yandex.provider.YandexProvider object at 0x0000021FB1EAE070>]}, {'process': 'login', 'socialaccount_providers': [<allauth.socialaccount.providers.yandex.provider.YandexProvider object at 0x0000021FB1E88FA0>]}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 1, 'revcounter0': 0, 'first': True, 'last': True}, 'provider': <allauth.socialaccount.providers.yandex.provider.YandexProvider object at 0x0000021FB1E88FA0>}])), <traceback object at 0x0000021FB1EA4CC0>)
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'auth_params'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'RequestContext' has no attribute 'auth_params'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'auth_params'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [auth_params] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x0000021FB1F55940>>, 'request': <WSGIRequest: GET '/accounts/login/?next=/categories/3/subscribe'>, 'user': <SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x0000021FB1E720D0>>, 'perms': PermWrapper(<SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x0000021FB1E720D0>>), 'messages': <FallbackStorage: request=<WSGIRequest: GET '/accounts/login/?next=/categories/3/subscribe'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'form': <LoginForm bound=False, valid=Unknown, fields=(login;password;remember)>, 'view': <allauth.account.views.LoginView object at 0x0000021FB1E4D310>, 'signup_url': '/accounts/signup/?next=%2Fcategories%2F3%2Fsubscribe', 'site': <Site: example.com>, 'redirect_field_name': 'next', 'redirect_field_value': '/categories/3/subscribe'}, {'block': <Block Node: body. Contents: [<TextNode: '\n\n    '>, <IfNode>, <TextNode: '\n\n    <div>\n      <strong'>, <IfNode>, <TextNode: '\n      </ul>\n    </div>\n '>, <Block Node: content. Contents: [<TextNode: '\n    '>]>, <TextNode: '\n    '>]>}, {'block': <Block Node: content. Contents: [<TextNode: '\n\n<h1>'>, <django.templatetags.i18n.TranslateNode object at 0x0000021FB1E816A0>, <TextNode: '</h1>\n\n'>, <django.template.library.SimpleNode object at 0x0000021FB1E81760>, <TextNode: '\n\n'>, <IfNode>, <TextNode: '\n\n<form class="login" met'>, <URLNode view_name=''account_login'' args=[] kwargs={} as=None>, <TextNode: '">\n  '>, <django.template.defaulttags.CsrfTokenNode object at 0x0000021FB1E58460>, <TextNode: '\n  '>, <Variable Node: form.as_p>, <TextNode: '\n  '>, <IfNode>, <TextNode: '\n  <a class="button secon'>, <URLNode view_name=''account_reset_password'' args=[] kwargs={} as=None>, <TextNode: '">'>, <django.templatetags.i18n.TranslateNode object at 0x0000021FB1E81FD0>, <TextNode: '</a>\n  <button class="pri'>, <django.templatetags.i18n.TranslateNode object at 0x0000021FB1E840A0>, <TextNode: '</button>\n</form>\n\n'>]>, 'socialaccount_providers': [<allauth.socialaccount.providers.yandex.provider.YandexProvider object at 0x0000021FB1EAE070>]}, {'process': 'login', 'socialaccount_providers': [<allauth.socialaccount.providers.yandex.provider.YandexProvider object at 0x0000021FB1E88FA0>]}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 1, 'revcounter0': 0, 'first': True, 'last': True}, 'provider': <allauth.socialaccount.providers.yandex.provider.YandexProvider object at 0x0000021FB1E88FA0>}]
+2023-04-13 21:20:56,311 INFO "GET /accounts/login/?next=/categories/3/subscribe HTTP/1.1" 200 1952 C:\kvzdev\django_pro\venv\lib\site-packages\django\core\servers\basehttp.py None
+2023-04-13 21:21:15,485 DEBUG Exception while resolving variable 'scope' in template 'account/login.html'. C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py (<class 'django.template.base.VariableDoesNotExist'>, VariableDoesNotExist('Failed lookup for key [%s] in %r', ('scope', [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x0000021FB1E801F0>>, 'request': <WSGIRequest: POST '/accounts/login/'>, 'user': <SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x0000021FB1EAE4F0>>, 'perms': PermWrapper(<SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x0000021FB1EAE4F0>>), 'messages': <FallbackStorage: request=<WSGIRequest: POST '/accounts/login/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'form': <LoginForm bound=True, valid=False, fields=(login;password;remember)>, 'view': <allauth.account.views.LoginView object at 0x0000021FB1F4BA30>, 'signup_url': '/accounts/signup/?next=%2Fcategories%2F3%2Fsubscribe', 'site': <Site: example.com>, 'redirect_field_name': 'next', 'redirect_field_value': '/categories/3/subscribe'}, {'block': <Block Node: body. Contents: [<TextNode: '\n\n    '>, <IfNode>, <TextNode: '\n\n    <div>\n      <strong'>, <IfNode>, <TextNode: '\n      </ul>\n    </div>\n '>, <Block Node: content. Contents: [<TextNode: '\n    '>]>, <TextNode: '\n    '>]>}, {'block': <Block Node: content. Contents: [<TextNode: '\n\n<h1>'>, <django.templatetags.i18n.TranslateNode object at 0x0000021FB1E816A0>, <TextNode: '</h1>\n\n'>, <django.template.library.SimpleNode object at 0x0000021FB1E81760>, <TextNode: '\n\n'>, <IfNode>, <TextNode: '\n\n<form class="login" met'>, <URLNode view_name=''account_login'' args=[] kwargs={} as=None>, <TextNode: '">\n  '>, <django.template.defaulttags.CsrfTokenNode object at 0x0000021FB1E58460>, <TextNode: '\n  '>, <Variable Node: form.as_p>, <TextNode: '\n  '>, <IfNode>, <TextNode: '\n  <a class="button secon'>, <URLNode view_name=''account_reset_password'' args=[] kwargs={} as=None>, <TextNode: '">'>, <django.templatetags.i18n.TranslateNode object at 0x0000021FB1E81FD0>, <TextNode: '</a>\n  <button class="pri'>, <django.templatetags.i18n.TranslateNode object at 0x0000021FB1E840A0>, <TextNode: '</button>\n</form>\n\n'>]>, 'socialaccount_providers': [<allauth.socialaccount.providers.yandex.provider.YandexProvider object at 0x0000021FB1F31730>]}, {'process': 'login', 'socialaccount_providers': [<allauth.socialaccount.providers.yandex.provider.YandexProvider object at 0x0000021FB1F31940>]}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 1, 'revcounter0': 0, 'first': True, 'last': True}, 'provider': <allauth.socialaccount.providers.yandex.provider.YandexProvider object at 0x0000021FB1F31940>}])), <traceback object at 0x0000021FB1E93140>)
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'scope'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'RequestContext' has no attribute 'scope'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'scope'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [scope] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x0000021FB1E801F0>>, 'request': <WSGIRequest: POST '/accounts/login/'>, 'user': <SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x0000021FB1EAE4F0>>, 'perms': PermWrapper(<SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x0000021FB1EAE4F0>>), 'messages': <FallbackStorage: request=<WSGIRequest: POST '/accounts/login/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'form': <LoginForm bound=True, valid=False, fields=(login;password;remember)>, 'view': <allauth.account.views.LoginView object at 0x0000021FB1F4BA30>, 'signup_url': '/accounts/signup/?next=%2Fcategories%2F3%2Fsubscribe', 'site': <Site: example.com>, 'redirect_field_name': 'next', 'redirect_field_value': '/categories/3/subscribe'}, {'block': <Block Node: body. Contents: [<TextNode: '\n\n    '>, <IfNode>, <TextNode: '\n\n    <div>\n      <strong'>, <IfNode>, <TextNode: '\n      </ul>\n    </div>\n '>, <Block Node: content. Contents: [<TextNode: '\n    '>]>, <TextNode: '\n    '>]>}, {'block': <Block Node: content. Contents: [<TextNode: '\n\n<h1>'>, <django.templatetags.i18n.TranslateNode object at 0x0000021FB1E816A0>, <TextNode: '</h1>\n\n'>, <django.template.library.SimpleNode object at 0x0000021FB1E81760>, <TextNode: '\n\n'>, <IfNode>, <TextNode: '\n\n<form class="login" met'>, <URLNode view_name=''account_login'' args=[] kwargs={} as=None>, <TextNode: '">\n  '>, <django.template.defaulttags.CsrfTokenNode object at 0x0000021FB1E58460>, <TextNode: '\n  '>, <Variable Node: form.as_p>, <TextNode: '\n  '>, <IfNode>, <TextNode: '\n  <a class="button secon'>, <URLNode view_name=''account_reset_password'' args=[] kwargs={} as=None>, <TextNode: '">'>, <django.templatetags.i18n.TranslateNode object at 0x0000021FB1E81FD0>, <TextNode: '</a>\n  <button class="pri'>, <django.templatetags.i18n.TranslateNode object at 0x0000021FB1E840A0>, <TextNode: '</button>\n</form>\n\n'>]>, 'socialaccount_providers': [<allauth.socialaccount.providers.yandex.provider.YandexProvider object at 0x0000021FB1F31730>]}, {'process': 'login', 'socialaccount_providers': [<allauth.socialaccount.providers.yandex.provider.YandexProvider object at 0x0000021FB1F31940>]}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 1, 'revcounter0': 0, 'first': True, 'last': True}, 'provider': <allauth.socialaccount.providers.yandex.provider.YandexProvider object at 0x0000021FB1F31940>}]
+2023-04-13 21:21:15,492 DEBUG Exception while resolving variable 'auth_params' in template 'account/login.html'. C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py (<class 'django.template.base.VariableDoesNotExist'>, VariableDoesNotExist('Failed lookup for key [%s] in %r', ('auth_params', [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x0000021FB1E801F0>>, 'request': <WSGIRequest: POST '/accounts/login/'>, 'user': <SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x0000021FB1EAE4F0>>, 'perms': PermWrapper(<SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x0000021FB1EAE4F0>>), 'messages': <FallbackStorage: request=<WSGIRequest: POST '/accounts/login/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'form': <LoginForm bound=True, valid=False, fields=(login;password;remember)>, 'view': <allauth.account.views.LoginView object at 0x0000021FB1F4BA30>, 'signup_url': '/accounts/signup/?next=%2Fcategories%2F3%2Fsubscribe', 'site': <Site: example.com>, 'redirect_field_name': 'next', 'redirect_field_value': '/categories/3/subscribe'}, {'block': <Block Node: body. Contents: [<TextNode: '\n\n    '>, <IfNode>, <TextNode: '\n\n    <div>\n      <strong'>, <IfNode>, <TextNode: '\n      </ul>\n    </div>\n '>, <Block Node: content. Contents: [<TextNode: '\n    '>]>, <TextNode: '\n    '>]>}, {'block': <Block Node: content. Contents: [<TextNode: '\n\n<h1>'>, <django.templatetags.i18n.TranslateNode object at 0x0000021FB1E816A0>, <TextNode: '</h1>\n\n'>, <django.template.library.SimpleNode object at 0x0000021FB1E81760>, <TextNode: '\n\n'>, <IfNode>, <TextNode: '\n\n<form class="login" met'>, <URLNode view_name=''account_login'' args=[] kwargs={} as=None>, <TextNode: '">\n  '>, <django.template.defaulttags.CsrfTokenNode object at 0x0000021FB1E58460>, <TextNode: '\n  '>, <Variable Node: form.as_p>, <TextNode: '\n  '>, <IfNode>, <TextNode: '\n  <a class="button secon'>, <URLNode view_name=''account_reset_password'' args=[] kwargs={} as=None>, <TextNode: '">'>, <django.templatetags.i18n.TranslateNode object at 0x0000021FB1E81FD0>, <TextNode: '</a>\n  <button class="pri'>, <django.templatetags.i18n.TranslateNode object at 0x0000021FB1E840A0>, <TextNode: '</button>\n</form>\n\n'>]>, 'socialaccount_providers': [<allauth.socialaccount.providers.yandex.provider.YandexProvider object at 0x0000021FB1F31730>]}, {'process': 'login', 'socialaccount_providers': [<allauth.socialaccount.providers.yandex.provider.YandexProvider object at 0x0000021FB1F31940>]}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 1, 'revcounter0': 0, 'first': True, 'last': True}, 'provider': <allauth.socialaccount.providers.yandex.provider.YandexProvider object at 0x0000021FB1F31940>}])), <traceback object at 0x0000021FB1E93280>)
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'auth_params'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 886, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'RequestContext' has no attribute 'auth_params'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'auth_params'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\kvzdev\django_pro\venv\lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [auth_params] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x0000021FB1E801F0>>, 'request': <WSGIRequest: POST '/accounts/login/'>, 'user': <SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x0000021FB1EAE4F0>>, 'perms': PermWrapper(<SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x0000021FB1EAE4F0>>), 'messages': <FallbackStorage: request=<WSGIRequest: POST '/accounts/login/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'form': <LoginForm bound=True, valid=False, fields=(login;password;remember)>, 'view': <allauth.account.views.LoginView object at 0x0000021FB1F4BA30>, 'signup_url': '/accounts/signup/?next=%2Fcategories%2F3%2Fsubscribe', 'site': <Site: example.com>, 'redirect_field_name': 'next', 'redirect_field_value': '/categories/3/subscribe'}, {'block': <Block Node: body. Contents: [<TextNode: '\n\n    '>, <IfNode>, <TextNode: '\n\n    <div>\n      <strong'>, <IfNode>, <TextNode: '\n      </ul>\n    </div>\n '>, <Block Node: content. Contents: [<TextNode: '\n    '>]>, <TextNode: '\n    '>]>}, {'block': <Block Node: content. Contents: [<TextNode: '\n\n<h1>'>, <django.templatetags.i18n.TranslateNode object at 0x0000021FB1E816A0>, <TextNode: '</h1>\n\n'>, <django.template.library.SimpleNode object at 0x0000021FB1E81760>, <TextNode: '\n\n'>, <IfNode>, <TextNode: '\n\n<form class="login" met'>, <URLNode view_name=''account_login'' args=[] kwargs={} as=None>, <TextNode: '">\n  '>, <django.template.defaulttags.CsrfTokenNode object at 0x0000021FB1E58460>, <TextNode: '\n  '>, <Variable Node: form.as_p>, <TextNode: '\n  '>, <IfNode>, <TextNode: '\n  <a class="button secon'>, <URLNode view_name=''account_reset_password'' args=[] kwargs={} as=None>, <TextNode: '">'>, <django.templatetags.i18n.TranslateNode object at 0x0000021FB1E81FD0>, <TextNode: '</a>\n  <button class="pri'>, <django.templatetags.i18n.TranslateNode object at 0x0000021FB1E840A0>, <TextNode: '</button>\n</form>\n\n'>]>, 'socialaccount_providers': [<allauth.socialaccount.providers.yandex.provider.YandexProvider object at 0x0000021FB1F31730>]}, {'process': 'login', 'socialaccount_providers': [<allauth.socialaccount.providers.yandex.provider.YandexProvider object at 0x0000021FB1F31940>]}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 1, 'revcounter0': 0, 'first': True, 'last': True}, 'provider': <allauth.socialaccount.providers.yandex.provider.YandexProvider object at 0x0000021FB1F31940>}]
+2023-04-13 21:21:15,510 INFO "POST /accounts/login/ HTTP/1.1" 200 2033 C:\kvzdev\django_pro\venv\lib\site-packages\django\core\servers\basehttp.py None
